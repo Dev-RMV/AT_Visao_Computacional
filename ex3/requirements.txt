@@ -1,0 +1,36 @@
+# Ambiente ÚNICO do AT de Visão Computacional. Python 3.13.
+# Criado/atualizado por `py criar_ambiente.py` (na raiz do projeto), que cria .venv/ e instala
+# este arquivo. Os quatro exercícios usam o mesmo arquivo; rodar o criar_ambiente.py de novo
+# instala o que faltar sem recriar o venv.
+#
+# As versões são as mesmas do venv da base de conhecimento (C:\visao_computacional_PVA), para
+# que o código escrito a partir das aulas se comporte igual.
+
+# --- Exercício 1: calibração de câmera e realidade aumentada ---------------------------
+# opencv-contrib-python, e não opencv-python: superconjunto com a mesma API 4.x usada nas aulas.
+# Nunca instalar os dois juntos, porque conflitam no mesmo módulo cv2. Traz calibrateCamera,
+# findChessboardCorners, cornerSubPix, undistort, solvePnP, projectPoints, VideoCapture e VideoWriter.
+opencv-contrib-python==4.14.0.94
+# NumPy 2.x: arrays das imagens, pontos 3D/2D e o .npz da calibração.
+numpy>=2.3,<3
+
+# --- Exercício 2: OpenCV DNN vs Keras, pipeline integrado e notebook -------------------
+# TensorFlow + Keras: MobileNetV2 com pesos ImageNet (inferência nativa no Keras); o cv2.dnn lê o
+# mesmo modelo em TFLite (readNetFromTFLite). No Windows nativo o TensorFlow roda só em CPU.
+# Wheel só existe até Python 3.13.
+tensorflow==2.21.0
+keras==3.15.1
+# psutil: memória RSS do processo, para a tabela latência/memória/acurácia.
+psutil==7.2.2
+# Notebook do item B (exercicio02b.ipynb): nbformat monta o .ipynb, nbclient o executa com o kernel
+# do próprio venv (ipykernel) e matplotlib exibe o frame anotado dentro do notebook.
+nbformat>=5.10
+nbclient>=0.10
+ipykernel>=6.29
+matplotlib>=3.9
+
+# --- Exercício 3: YOLOv4-tiny, SSD MobileNetV2 e rastreamento por IoU ------------------
+# Só OpenCV DNN e NumPy (já acima). Não há avaliação contra gabarito (COCO/MOT) neste trabalho;
+# a taxa de ID switches é uma estimativa heurística documentada no código.
+
+# --- Exercício 4: DeepLabV3 (TensorFlow, já acima) e relatório integrativo -------------

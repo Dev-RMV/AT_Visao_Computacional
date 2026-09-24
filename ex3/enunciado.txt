@@ -1,0 +1,14 @@
+Requisitos Técnicos e Saídas Esperadas
+
+Item A:
+Implemente detecção em tempo real com YOLOv4-tiny e SSD MobileNetV2, ambos via OpenCV DNN.
+Para cada modelo: processe um vídeo ou stream com bounding boxes, rótulos e confidências; aplique Non-Maximum Suppression com threshold 0.4; meça FPS médio e latência por frame. Pode gerar um vídeo sintético.
+Compare os dois modelos numa tabela: FPS, número de parâmetros e tamanho do arquivo em disco.
+Conclua qual modelo é mais adequado para robótica embarcada e justifique com os dados coletados.
+Validação: feed com bounding boxes para YOLO e SSD; tabela comparativa no terminal; conclusão justificada no código.
+Item B:
+Integre o YOLO do item A com rastreamento de objetos por IoU entre frames consecutivos (ou cv2.TrackerCSRT): (1) atribua ID persistente a cada objeto detectado, (2) mantenha a trilha dos últimos 30 frames como linha colorida, (3) detecte entradas e saídas de objetos e imprima contagem cumulativa e (4) meça a taxa de ID switches por minuto de vídeo.
+Discuta como esse sistema poderia ser usado para contagem de pedestres em drone de vigilância urbana, incluindo considerações éticas.
+Validação: feed com IDs, trilhas e contagem cumulativa; taxa de ID switches no terminal; discussão ética no relatório.
+
+crie um venv com TODOS os pacotes de requeriments.txt

@@ -1,0 +1,15 @@
+Exercício 2 - Classificação e detecção com OpenCV DNN (Competências 2.4, 3.3 e 4.2)
+
+Requisitos Técnicos e Saídas Esperadas
+
+Item A:
+Carregue um modelo de classificação pré-treinado via módulo DNN do OpenCV (GoogLeNet ou SqueezeNet em Caffe, ou MobileNetV2 em TensorFlow).
+Processe ao menos 10 imagens de categorias distintas: (1) crie o blob com cv2.dnn.blobFromImage, (2) realize forward pass, (3) extraia top-3 de classes com confiança e exiba sobre a imagem.
+Meça e compare a latência de inferência no módulo DNN do OpenCV vs. a mesma rede carregada nativamente no Keras.
+Monte uma tabela comparativa com latência (ms), uso de memória (MB) e acurácia top-1. Comente quando o módulo DNN é preferível ao Keras em sistemas embarcados.
+Validação: imagens com top-3 sobrepostos; tabela comparativa no terminal; comentário técnico sobre escolha de backend no código.
+
+Item B:
+Integre o pipeline completo dos TPs anteriores num único notebook sequencial: (1) capture frame e aplique undistort (Exercício 1), (2) segmente ROI por cor HSV (TP1), (3) extraia features ORB (TP2), (4) aplique detector HOG+SVM ou Haar Cascade (TP3) e (5) classifique a ROI detectada com o modelo DNN do item A.
+Exiba o frame final com todas as anotações sobrepostas e imprima o tempo total de cada etapa do pipeline em ms.
+Validação: frame com anotações de todas as etapas; terminal com tempo de cada etapa em ms; pipeline executando sem erros do início ao fim.

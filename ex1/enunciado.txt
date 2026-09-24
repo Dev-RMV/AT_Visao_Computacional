@@ -1,0 +1,13 @@
+Item A:
+Use o vídeo na pasta entradas para os itens a seguir
+crie uma câmera virtual que analise o vídeo acima, para os itens que seguem
+Ainda na pasta entradas use ao menos 15 imagens de um padrão de tabuleiro de xadrez (7×6 ou similar) em ângulos e distâncias variados
+Use cv2.findChessboardCorners e cv2.calibrateCamera para obter a matriz intrínseca K, os coeficientes de distorção e os erros de reprojeção por imagem.
+Aplique cv2.undistort em uma imagem distorcida e exiba lado a lado a versão original e corrigida.
+Imprima K, os 5 coeficientes de distorção e o erro de reprojeção médio em pixels.
+Comente no código o que cada parâmetro representa fisicamente e qual valor de erro é considerado aceitável para aplicações robóticas.
+Validação: painel com imagem original e corrigida; terminal com K, coeficientes e erro médio de reprojeção; comentário técnico no código.
+Item B:
+Usando a câmera calibrada virtual no item A, implemente sobreposição de realidade aumentada em tempo real: (1) detecte o tabuleiro do video com cv2.solvePnP para estimar pose (rotação e translação), (2) projete um cubo 3D virtual com aresta de 1 quadrado sobre o canto de origem usando cv2.projectPoints, (3) desenhe as arestas do cubo com cores distintas por face e (4) exiba o vetor de rotação e translação estimados no terminal a cada frame.
+O sistema deve funcionar sobre vídeo gravado do tabuleiro.
+Validação: feed com cubo 3D sobreposto ao tabuleiro; terminal com vetores de rotação e translação; cubo estável ao mover a câmera.

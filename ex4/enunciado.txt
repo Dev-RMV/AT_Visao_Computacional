@@ -1,0 +1,10 @@
+Item A:
+Implemente segmentação semântica usando DeepLabV3 via TensorFlow Hub .
+Processe ao menos 5 imagens de cenas externas (rua, calçada, parque): (1) gere o mapa de segmentação com classes coloridas por categoria, (2) sobreponha a máscara semitransparente sobre a imagem original e (3) calcule e imprima a porcentagem de área ocupada por cada classe detectada.
+Compare visualmente a segmentação semântica com a segmentação por cor HSV do TP1 que está em C:\tp1_visao_computacional exibindo ambas lado a lado para a mesma imagem.
+Discuta vantagens e limitações de cada abordagem para um veículo autônomo.
+Validação: imagens com máscara semântica semitransparente; painel comparando segmentação semântica e HSV; terminal com porcentagem por classe; discussão no código.
+Item B — Relatório integrativo (obrigatório):
+Produza um relatório técnico em Markdown (mínimo 800 palavras) documentando o pipeline completo de percepção visual implementado ao longo da disciplina.
+O relatório deve conter obrigatoriamente: (1) diagrama do pipeline completo (calibração → pré-processamento → detecção clássica → detecção profunda → rastreamento → segmentação), (2) tabela comparativa de todas as técnicas estudadas com métricas reais coletadas nos TPs (velocidade, acurácia, complexidade), (3) análise de quais técnicas são viáveis em hardware embarcado com restrição de 5W de consumo, (4) proposta de arquitetura de percepção para um veículo autônomo urbano integrando ao menos 4 técnicas da disciplina e (5) identificação de 3 lacunas que serão endereçadas na DR4 — Veículos Autônomos e Robótica Móvel.
+Validação: arquivo .md entregue; mínimo de 800 palavras; todas as 5 seções obrigatórias presentes; ao menos 4 técnicas referenciadas com dados reais dos TPs.
