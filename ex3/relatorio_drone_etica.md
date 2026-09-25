@@ -9,7 +9,7 @@ O sistema integra um detector de objetos em tempo real (**YOLOv4-tiny via OpenCV
 1. **Detecção frame a frame:** localização de pedestres e veículos com supressão de não-máximos (*NMS threshold 0.4*).
 2. **Associação temporal:** IoU entre a caixa prevista de cada track e as detecções do frame atual.
 3. **Contagem orientada a eventos:** entradas (track confirmado após 2 detecções) e saídas (track encerrado após 15 frames sem detecção), acumuladas.
-4. **Métrica de estabilidade (estimativa heurística):** 6 prováveis ID switches em 1.32 min de vídeo (4.53/min), com 53 entradas e 44 saídas. A heurística conta apenas um objeto reidentificado sobre a posição de um track encerrado há poucos frames; trocas de ID entre dois objetos que se cruzam sem perder a detecção não são capturadas e não há gabarito (*ground truth*) para este vídeo, logo o valor tende a subestimar os ID switches reais. Custo do rastreador: 0.063 ms por frame.
+4. **Métrica de estabilidade (estimativa heurística):** 6 prováveis ID switches em 1.32 min de vídeo (4.53/min), com 53 entradas e 44 saídas. A heurística conta apenas um objeto reidentificado sobre a posição de um track encerrado há poucos frames; trocas de ID entre dois objetos que se cruzam sem perder a detecção não são capturadas e não há gabarito (*ground truth*) para este vídeo, logo o valor tende a subestimar os ID switches reais. Custo do rastreador: 0.133 ms por frame.
 
 ---
 
